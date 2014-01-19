@@ -8,6 +8,11 @@
         "default_title": "SmogKrk",
         "default_popup": "popup.html"
     },
+    "background": {
+        "scripts": ["js/libs/jquery.min.js", "js/background.js"],
+        "persistent": false
+    },
+    "permissions": ["alarms", "storage"],
     "icons": {
         "38": "img/icon_38.png",
         "64": "img/icon_64.png"

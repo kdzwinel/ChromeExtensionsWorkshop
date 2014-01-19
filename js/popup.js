@@ -6,6 +6,13 @@ $(document).ready(function(){
         $body = $('body');
 
     function showStats(data) {
+        hideLoader();
+
+        if(!data.city || !data.pollutants) {
+            showError();
+            return;
+        }
+
         $city.text(data.city);
 
         var items = [];
@@ -35,8 +42,5 @@ $(document).ready(function(){
         $body.removeClass('loading');
     }
 
-    $.getJSON('http://smogalert.pl/api/stats/krakow-bujaka')
-        .done(showStats)
-        .fail(showError)
-        .always(hideLoader);
+    chrome.storage.local.get(showStats);
 });
