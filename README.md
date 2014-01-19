@@ -6,7 +6,7 @@
 <br /><img src='http://i.imgur.com/SoM1ROy.png' alt='Inspect views: background page'/><br />
 2. Add "storage" and "alarms" permission to your extension using `permissions` field in the manifest.
 3. Implement these changes:
-	- use alarm API on your background page to download pollution data every 60 minutes (`chrome.alarms.create()` and `chrome.alarms.onAlarm.addListener()`)
+	- use alarm API on your background page to download pollution data every 60 minutes (`chrome.alarms.create()` and `chrome.alarms.onAlarm.addListener()`). While testing, you can set this interval to 30 seconds.
 	- store downloaded data using storage API (`chrome.storage.local.set()`)
 	- remove AJAX request from the popup and use data from the storage instead
 	- use `chrome.browserAction.setBadgeText` and `chrome.browserAction.setBadgeBackgroundColor` to show pollution information on the browser action button
@@ -21,7 +21,6 @@
 - [Alarms API](http://developer.chrome.com/extensions/alarms.html)
 
 ## Extra time left?
-- Show error message when there is no data in the storage.
-- Remove loading animation from the popup if you had one. We don't need it since data are immediately retrieved from the storage.
-- Change text in the tooltip that appears when mouse is over the browser action button. By default this tooltip shows only extension name ("SmogKrk"), but you can dynamically (same as with badges) change it to something more useful ("SmogKrk - 1 pollutant exceeds the norms").
+- Change text in the tooltip that appears when mouse is over the browser action button. By default this tooltip shows only extension name ("SmogKrk"), but you can dynamically (same as with badges) change it to something more useful ("SmogKrk - 1 pollutant exceeds the norms"). Use `chrome.browserAction.setTitle()`.
+- Show error message in the popup when there is no data in the storage.
 - You can change whole icon of the browser action button dynamically and even animate it.
