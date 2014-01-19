@@ -35,7 +35,7 @@ $(document).ready(function(){
         $body.removeClass('loading');
     }
 
-    $.getJSON('http://smogalert.pl/api/stats/krakow-bujaka')
+    $.getJSON('http://smogalert.pl/api/stats/krakow-krasinskiego')
         .done(showStats)
         .fail(showError)
         .always(hideLoader);
