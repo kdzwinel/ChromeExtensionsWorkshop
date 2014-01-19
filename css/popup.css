@@ -1,0 +1,35 @@
+body {
+    min-width: 180px;
+    min-height: 16px;
+}
+
+body.loading {
+    background: url(../img/loader.gif) no-repeat center center;
+}
+
+body.loading > * {
+    display: none;
+}
+
+body.error #error {
+    display: block;
+    background: darkred;
+    color: whitesmoke;
+    text-align: center;
+}
+
+#error {
+    display: none;
+}
+
+h1 {
+    font-size: 14px;
+}
+
+#pollutants td {
+    padding: 0 5px;
+}
+
+#pollutants .norm-percent.warning {
+    color: darkred;
+}
