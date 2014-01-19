@@ -3,14 +3,14 @@
 ## TODO
 1. Create `background.js` file and set it as your background script using `background` field in the manifest. If you decide later on that you want to use some kind of a library (e.g. jQuery) on your background page, just mention it in the manifest file.
 	- you can debug background pages by clicking "background page" on the "Inspect views" list on `chrome://extensions/` page
-<img src='http://i.imgur.com/SoM1ROy.png' alt='Inspect views: background page' style='display: block; width: 300px' />
+<br /><img src='http://i.imgur.com/SoM1ROy.png' alt='Inspect views: background page'/><br />
 2. Add "storage" and "alarms" permission to your extension using `permissions` field in the manifest.
 3. Implement these changes:
 	- use alarm API on your background page to download pollution data every 60 minutes (`chrome.alarms.create()` and `chrome.alarms.onAlarm.addListener()`)
 	- store downloaded data using storage API (`chrome.storage.local.set()`)
 	- remove AJAX request from the popup and use data from the storage instead
 	- use `chrome.browserAction.setBadgeText` and `chrome.browserAction.setBadgeBackgroundColor` to show pollution information on the browser action button
-<img src="http://i.imgur.com/X3UzJtM.png" alt="Browser action button with a badge" style="width: 200px; display: block" />
+<br /><img src="http://i.imgur.com/X3UzJtM.png" alt="Browser action button with a badge"/><br />
 4. Done! If you have extra time left you can polish your extension. Check list of possible improvements below.
 
 ## Links
