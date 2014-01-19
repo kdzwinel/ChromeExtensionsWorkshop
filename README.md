@@ -1,4 +1,4 @@
-# Chrome Extensions Workshop - Step 3
+# Chrome Extensions Workshop - Step 2
 
 ## TODO
 1. Create `background.js` file and set it as your background script using `background` field in the manifest. If you decide later on that you want to use some kind of a library (e.g. jQuery) on your background page, just mention it in the manifest file.
