@@ -29,37 +29,33 @@
         console.warn('Data loading failed.', new Date());
     }
 
+    function showNotification(title, msg) {
+        //ATM only osx, windows and chrome os support chrome.notifications
+        if(chrome.notifications) {
+            chrome.notifications.create("smog msg", {
+                type: "basic",
+                title: title,
+                message: msg,
+                iconUrl: 'img/icon_64.png'
+            }, function(){});
+        } else if(window.Notification) {
+            //we use default HTML5 notifications for Linux
+            new Notification(title, {body: msg});
+        }
+    }
+
     function checkForStatusChanges(newData) {
         var deferred = new $.Deferred();
 
         chrome.storage.local.get(function(oldData) {
             if(oldData && oldData.pollutants) {
                 var oldValue = countDangerousPollutants(oldData.pollutants),
-                    newValue = countDangerousPollutants(newData.pollutants),
-                    title = null,
-                    msg = null;
+                    newValue = countDangerousPollutants(newData.pollutants);
 
                 if(oldValue === 0 && newValue > 0) {
-                    title = "Smog Notification";
-                    msg = "Pollution just got really bad, consider staying at home (" + newValue + " pollutant(s) exceeded their norms).";
+                    showNotification("Smog Notification", "Pollution just got really bad, consider staying at home (" + newValue + " pollutant(s) exceeded their norms).");
                 } else if(newValue === 0 && oldValue > 0) {
-                    title = "Smog Notification";
-                    msg = "It's safe to go outside again. There are no pollutants that exceed their norms at the moment.";
-                }
-
-                if(title !== null && msg !== null) {
-                    //ATM only osx, windows and chrome os support chrome.notifications
-                    if(chrome.notifications) {
-                        chrome.notifications.create("smog msg", {
-                            type: "basic",
-                            title: title,
-                            message: msg,
-                            iconUrl: 'img/icon_64.png'
-                        }, function(){});
-                    } else if(window.Notification) {
-                        //we use default HTML5 notifications for Linux
-                        new Notification(title, {body: msg});
-                    }
+                    showNotification("Smog Notification", "It's safe to go outside again. There are no pollutants that exceed their norms at the moment.");
                 }
             }
 
