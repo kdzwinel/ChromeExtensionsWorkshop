@@ -19,7 +19,11 @@
     }
 
     function saveData(data) {
+        //append download date
+        data.downloadDate = (new Date()).toString();
+
         chrome.storage.local.set(data);
+
         console.log('Data updated.', new Date());
     }
 
@@ -34,12 +38,16 @@
             .fail(loadingFailed);
     }
 
-    chrome.alarms.create("Get pollution info", {
-        periodInMinutes: 5
-    });
+    //this runs only once - when extension is loaded/installed/enabled, everything outside this callback runs every time
+    //background page is reloaded
+    chrome.runtime.onInstalled.addListener(function(){
+        chrome.alarms.create("Get pollution info", {
+            periodInMinutes: 60
+        });
 
-    //load data right away
-    updateData();
+        //load data right away
+        updateData();
+    });
 
     //load data every X minutes
     chrome.alarms.onAlarm.addListener(updateData);
