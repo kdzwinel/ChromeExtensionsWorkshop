@@ -5,7 +5,7 @@
 2. Add `default_popup` field to the manifest and set it to `popup.html`
 3. Test your changes. After clicking browser action button small popup should appear.
 4. Create and add `popup.js` and `popup.css` to your `popup.html` page. Implement the functionality presented below
-<img src="http://i.imgur.com/Fz1xfHz.png" alt="Popup with pollution information" style="width:400px;display:block" />
+<br/><img src="http://i.imgur.com/Fz1xfHz.png" alt="Popup with pollution information" /><br/>
 	- Pull the pollution data from `http://smogalert.pl/api/stats/krakow-krasinskiego`
 	- You can (but definitely don't have to) use any libraries/frameworks you wish. However, don't use external servers! Download all files that you need to your extension folder.
 	- You can debug your popup by right-clicking on the browser action button and choosing "Inspect Popup".
