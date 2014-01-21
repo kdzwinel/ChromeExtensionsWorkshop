@@ -7,7 +7,7 @@
 4. Create and add `popup.js` and `popup.css` to your `popup.html` page. Implement the functionality presented below
 <img src="http://i.imgur.com/Fz1xfHz.png" alt="Popup with pollution information" style="width:400px;display:block" />
 	- Pull the pollution data from `http://smogalert.pl/api/stats/krakow-krasinskiego`
-	- You can (but definitely don't have to) use any libraries/frameworks you wish. However, don't use external servers, download all files that you need to your extension folder.
+	- You can (but definitely don't have to) use any libraries/frameworks you wish. However, don't use external servers! Download all files that you need to your extension folder.
 	- You can debug your popup by right-clicking on the browser action button and choosing "Inspect Popup".
 5. Done! If you have extra time left you can polish your extension. Check list of possible improvements below.
 
