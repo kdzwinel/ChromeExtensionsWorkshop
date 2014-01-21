@@ -20,3 +20,6 @@
 - [Browser Actions](http://developer.chrome.com/extensions/browserAction.html)
 - [JSON Validator](http://jsonlint.com/)
 - [Icon search engine](https://www.iconfinder.com/)
+
+## Protip
+If you are using WebStorm, NetBeans or any other IDE/editor that provides autocompletion, then please include [this](https://code.google.com/p/closure-compiler/source/browse/contrib/externs/chrome_extensions.js) file in your project. It provides definitions for all Chrome APIs.
