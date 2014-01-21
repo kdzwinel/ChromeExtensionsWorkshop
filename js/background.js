@@ -35,22 +35,31 @@
         chrome.storage.local.get(function(oldData) {
             if(oldData && oldData.pollutants) {
                 var oldValue = countDangerousPollutants(oldData.pollutants),
-                    newValue = countDangerousPollutants(newData.pollutants);
+                    newValue = countDangerousPollutants(newData.pollutants),
+                    title = null,
+                    msg = null;
 
                 if(oldValue === 0 && newValue > 0) {
-                    chrome.notifications.create("smog msg", {
-                        type: "basic",
-                        title: "Smog Notification",
-                        message: "Pollution just got really bad, consider staying at home (" + newValue + " pollutant(s) exceeded their norms).",
-                        iconUrl: 'img/icon_64.png'
-                    }, function(){});
+                    title = "Smog Notification";
+                    msg = "Pollution just got really bad, consider staying at home (" + newValue + " pollutant(s) exceeded their norms).";
                 } else if(newValue === 0 && oldValue > 0) {
-                    chrome.notifications.create("smog msg", {
-                        type: "basic",
-                        title: "Smog Notification",
-                        message: "It's safe to go outside again. There are no pollutants that exceed their norms at the moment.",
-                        iconUrl: 'img/icon_64.png'
-                    }, function(){});
+                    title = "Smog Notification";
+                    msg = "It's safe to go outside again. There are no pollutants that exceed their norms at the moment.";
+                }
+
+                if(title !== null && msg !== null) {
+                    //ATM only osx, windows and chrome os support chrome.notifications
+                    if(chrome.notifications) {
+                        chrome.notifications.create("smog msg", {
+                            type: "basic",
+                            title: title,
+                            message: msg,
+                            iconUrl: 'img/icon_64.png'
+                        }, function(){});
+                    } else if(window.Notification) {
+                        //we use default HTML5 notifications for Linux
+                        new Notification(title, {body: msg});
+                    }
                 }
             }
 
@@ -67,8 +76,6 @@
             .done(updateBadge)
             .fail(loadingFailed);
     }
-
-    window.checkForStatusChanges = checkForStatusChanges;
 
     //this runs only once - when extension is loaded/installed/enabled, everything outside this callback runs every time
     //background page is reloaded
