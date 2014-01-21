@@ -40,9 +40,12 @@
             }, function(){});
         } else if(window.Notification) {
             //we use default HTML5 notifications for Linux
-            new Notification(title, {body: msg});
+            var n = new Notification(title, {body: msg});
+            n.onclick = showForecastPage;
         }
     }
+
+    window.showNotification = showNotification;
 
     function checkForStatusChanges(newData) {
         var deferred = new $.Deferred();
@@ -63,6 +66,13 @@
         });
 
         return deferred.promise();
+    }
+
+    function showForecastPage() {
+        chrome.tabs.create({
+            url: 'http://www.malopolska.pl/Obywatel/EKO-prognozaMalopolski/Malopolska/Strony/default.aspx',
+            active: true
+        });
     }
 
     function updateData() {
@@ -86,4 +96,8 @@
 
     //load data every X minutes
     chrome.alarms.onAlarm.addListener(updateData);
+
+    if(chrome.notifications) {
+        chrome.notifications.onClicked.addListener(showForecastPage);
+    }
 })();
