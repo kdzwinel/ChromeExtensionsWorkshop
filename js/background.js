@@ -45,8 +45,6 @@
         }
     }
 
-    window.showNotification = showNotification;
-
     function checkForStatusChanges(newData) {
         var deferred = new $.Deferred();
 
