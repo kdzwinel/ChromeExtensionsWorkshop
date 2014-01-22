@@ -7,7 +7,8 @@
 4. Create and add `popup.js` and `popup.css` to your `popup.html` page. Implement the functionality presented below:
 <br/><img src="http://i.imgur.com/Fz1xfHz.png" alt="Popup with pollution information" /><br/>
 	- Pull the pollution data from `http://smogalert.pl/api/stats/krakow-krasinskiego`.
-	- You can (but definitely don't have to) use any libraries/frameworks you wish. However, don't use external servers! Download all files that you need to your extension folder.
+	- You can't use inline JavaScript on your page (`<script>var bla;...` or `<a href='#' onclick='something()'...`), keep all your code in the separate files.
+	- You can (but definitely don't have to) use any libraries/frameworks you wish. However, don't use external files! Download all resources that you need to your extensions' folder.
 	- You can debug your popup by right-clicking on the browser action button and choosing "Inspect Popup".
 5. Done! If you have extra time left you can polish your extension. Check list of possible improvements below.
 
@@ -16,7 +17,7 @@
 - [Manifest File Format](http://developer.chrome.com/extensions/manifest.html)
 
 ## Extra time left?
-- Clean up your file structure (e.g. keep all JavaScript files in `js/` folder etc.)
 - While data are being loaded show some text/animation (e.g. gif or CSS Animation).
+- Clean up your file structure (e.g. keep all JavaScript files in `js/` folder, css files in `css/` etc.)
 - Make sure that user will get an error message if API is unreachable.
 - Make this popup pretty! Play with styles and maybe use [bootstrap](http://getbootstrap.com/)?
