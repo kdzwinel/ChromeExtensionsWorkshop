@@ -26,7 +26,7 @@ You can implement this step using:
 	- PRO TIP: `chrome.alarms.create()` shouldn't be called every time event page is loaded because it resets the timer. Check [onInstalled](http://developer.chrome.com/extensions/runtime.html#event-onInstalled) event. Listeners, on the other hand, *should* be created every time event page is loaded.
 	- store downloaded data using [storage API](http://developer.chrome.com/extensions/storage.html) (`chrome.storage.local.set()`)
 	- remove AJAX request from the popup and use data from the storage instead (`chrome.storage.local.get()`)
-	- use `chrome.browserAction.setBadgeText` and `chrome.browserAction.setBadgeBackgroundColor` ([*](http://developer.chrome.com/extensions/browserAction.html#method-setBadgeText)) on your event page to show pollution information on the browser action button
+	- use `chrome.browserAction.setBadgeText` and `chrome.browserAction.setBadgeBackgroundColor` ([*](http://developer.chrome.com/extensions/browserAction.html#method-setBadgeText)) on your event page to show pollution information on the browser action button (e.g. red badge with number of pollutants exceeding norms or green badge when air quality is OK)
 <br /><img src="http://i.imgur.com/X3UzJtM.png" alt="Browser action button with a badge"/><br />
 4. Done! If you have extra time left you can polish your extension. Check list of possible improvements below.
 
