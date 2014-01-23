@@ -12,7 +12,7 @@ You can implement this step using:
 	- use `setInterval` on your background page to download pollution data every 60 minutes. While testing, you can set this interval to 30 seconds.
 	- store downloaded data using [storage API](http://developer.chrome.com/extensions/storage.html) (`chrome.storage.local.set()`)
 	- remove AJAX request from the popup and use data from the storage instead (`chrome.storage.local.get()`)
-	- use `chrome.browserAction.setBadgeText` and `chrome.browserAction.setBadgeBackgroundColor` on your background page to show pollution information on the browser action button
+	- use `chrome.browserAction.setBadgeText` and `chrome.browserAction.setBadgeBackgroundColor` on your background page to show pollution information on the browser action button (e.g. red badge with number of pollutants exceeding norms or green badge when air quality is OK)
 <br /><img src="http://i.imgur.com/X3UzJtM.png" alt="Browser action button with a badge"/><br />
 4. Done! If you have extra time left you can polish your extension. Check list of possible improvements below.
 
