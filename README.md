@@ -6,7 +6,7 @@
  - there were no pollutants exceeding norms before and now there is at least one that does or
  - there was, at least one, pollutant that exceeded the norms and now air is OK again.
 <img src='http://i.imgur.com/pxZRsoq.png' alt='Chrome notification' />
-3. Test your extension. If everything works as expected make your extension to open [this page](http://www.malopolska.pl/Obywatel/EKO-prognozaMalopolski/Malopolska/Strony/default.aspx) whenever someone clicks on a notification. You'll need to use [Tabs API](http://developer.chrome.com/extensions/tabs.html#method-create).
+3. Test your extension. If everything works as expected make your extension to open `http://www.malopolska.pl/powietrze` page whenever someone clicks on a notification. You'll need to use [Tabs API](http://developer.chrome.com/extensions/tabs.html#method-create).
 
 **Chrome OS/ Windows / OSX** users please use Chrome Notifications API.
 
