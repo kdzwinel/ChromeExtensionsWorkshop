@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SmogKrk Options Page</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/options.css">
+</head>
+<body class="loading">
+<div class="container">
+    <h1>SmogKrk Options Page</h1>
+    <hr/>
+
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="station">Station</label>
+
+            <div class="col-sm-9">
+                <select class="form-control" id="station"></select>
+
+                <p class="help-block">Choose the pollution measuring station near you</p>
+            </div>
+        </div>
+        <div class="form-group notifications">
+            <label class="col-sm-3 control-label" for="notifications">Show notifications</label>
+            <div class="col-sm-9">
+                <input type="checkbox" id="notifications">
+
+                <p class="help-block">Decide you want to be notified about important air quality changes</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label  class="col-sm-3 control-label" for="updateInterval">Data update interval</label>
+            <div class="col-sm-9">
+                <input type="number" min="15" max="180" class="form-control" id="updateInterval">
+
+                <p class="help-block">Decide how often pollution data should be downloaded (15min-180min)</p>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="js/libs/jquery.min.js"></script>
+<script src="js/options.js"></script>
+</body>
+</html>

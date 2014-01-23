@@ -1,7 +1,7 @@
 {
     "name": "SmogKrk",
     "description": "Air pollution information.",
-    "version": "0.4",
+    "version": "0.5",
     "manifest_version": 2,
     "browser_action": {
         "default_icon": "img/icon_38.png",
@@ -16,5 +16,6 @@
     "icons": {
         "38": "img/icon_38.png",
         "64": "img/icon_64.png"
-    }
+    },
+    "options_page": "options.html"
 }

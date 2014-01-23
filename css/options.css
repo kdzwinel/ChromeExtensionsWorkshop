@@ -1,0 +1,7 @@
+body.loading form {
+    display: none;
+}
+
+body.loading .container {
+    background: url(../img/loader.gif) no-repeat center bottom;
+}
