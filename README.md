@@ -8,10 +8,10 @@
 <br/>
 3. Create a form on the options page that allows user to change the station that they want to monitor and disable notifications.
 	- you can pull list of available stations from `http://smogalert.pl/api/stations` (use `_id` to make `http://smogalert.pl/api/stats/<id>` calls)
-	- save settings using `chrome.storage.local.set()` and load them when options page is opened using `chrome.storage.local.get()`
+	- save settings using `chrome.storage.local.set()` and load them back again when options page is opened using `chrome.storage.local.get()`
 4. Make appropriate changes to your background/event page so that it respects user settings.
 	- pull settings from storage before showing a notification or making an API call
-5. After user changes the station, make sure to update the pollution data immediately. There are two ways (valid for both background and event pages) to achieve that:
+5. After user changes the station, make sure to update the pollution data immediately. There are two ways to achieve that (valid for both background and event pages):
 	- access your background page from your options page using `chrome.runtime.getBackgroundPage()`([docs](http://developer.chrome.com/extensions/runtime.html#method-getBackgroundPage)) and call some kind of a reload function (note that it must be available in the global scope).
 	- use `chrome.storage.onChanged.addListener()` on the background page to listen for any changes in the storage and, whenever station changes, load appropriate data.
 
