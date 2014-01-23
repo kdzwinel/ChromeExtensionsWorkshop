@@ -7,6 +7,8 @@ Your extension is one of a kind, you won't find anything similar in the [Chrome 
 If you'll decide to stick to the [smogalert.pl](http://smogalert.pl) API, *make sure to give them some credit*! You can also request access to the data directly from UMWM (more info [here](http://www.malopolska.pl/Obywatel/EKO-prognozaMalopolski/Malopolska/Strony/jak-powstaja-prognozy.aspx)).
 
 If you are wondering how to extend this extension, check all the "Extra time left?" sections from the previous steps + my ideas below:
-- drawing some pretty charts using pollution data,
-- providing a forecast (based on the historic data),
-- monitoring multiple locations.
+- drawing some pretty charts using pollution data
+- providing a forecast (based on the historic data)
+- monitoring multiple locations
+- support more languages (Chrome Extensions have nice i18n API)
+- port it to Firefox
