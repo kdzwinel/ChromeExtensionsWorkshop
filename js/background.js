@@ -68,7 +68,7 @@
 
     function showForecastPage() {
         chrome.tabs.create({
-            url: 'http://www.malopolska.pl/Obywatel/EKO-prognozaMalopolski/Malopolska/Strony/default.aspx',
+            url: 'http://www.malopolska.pl/powietrze',
             active: true
         });
     }
