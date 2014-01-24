@@ -8,6 +8,7 @@
 <br/>
 *TIP* Note that you only need to compare number of pollutants exceeding the norms in the old and new data.
 <br/>
+*TIP* You can use fake API for testing `http://kdzwinel.1.ai/smogapi/`. It returns random value of P10 pollutant.
 <img src='http://i.imgur.com/pxZRsoq.png' alt='Chrome notification' />
 <br/>
 3. Test your extension. If everything works as expected make your extension to open `http://www.malopolska.pl/powietrze` page whenever someone clicks on a notification. You'll need to use [Tabs API](http://developer.chrome.com/extensions/tabs.html#method-create).
