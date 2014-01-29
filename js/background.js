@@ -107,7 +107,7 @@
     }
 
     function loadPollutionData(station) {
-        return $.when($.getJSON('http://smogalert.pl/api/stats/' + station));
+        return $.getJSON('http://smogalert.pl/api/stats/' + station);
     }
 
     function updateData() {
