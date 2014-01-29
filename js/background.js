@@ -74,7 +74,7 @@
     }
 
     function updateData() {
-        $.when($.getJSON('http://smogalert.pl/api/stats/krakow-krasinskiego'))
+        $.getJSON('http://smogalert.pl/api/stats/krakow-krasinskiego')
             .then(checkForStatusChanges)
             .done(saveData)
             .done(updateBadge)
